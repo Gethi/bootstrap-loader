@@ -108,6 +108,7 @@ module.exports.pitch = function(source) {
   logger.debug('Using Bootstrap module:', bootstrapNPMModule);
 
   config.bootstrapPath = bootstrapPath || resolveModule(bootstrapNPMModule);
+  config.bootstrapPath = `${__dirname}/../../bootstrap-sass`; // TODO SHIT
   logger.debug(`Bootstrap module location (abs): ${config.bootstrapPath}`);
   if (!config.bootstrapPath) {
     const msg = `Could not resolve module '${bootstrapNPMModule}' which must be installed when bootstrap version is configured to v${bootstrapVersion}.
